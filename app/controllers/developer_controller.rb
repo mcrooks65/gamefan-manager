@@ -1,5 +1,6 @@
 class DeveloperController < ApplicationController
   def new
+    @developer = Developer.new
   end
 
   def create
