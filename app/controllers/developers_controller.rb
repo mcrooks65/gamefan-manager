@@ -8,6 +8,7 @@ class DevelopersController < ApplicationController
   def create
     @developer = Developer.new(developer_params)
     @developer.save
+    redirect_to developer_path(@developer)
   end
 
   def show
