@@ -14,6 +14,7 @@ class DevelopersController < ApplicationController
   def show
     @message = params[:message] if params[:message]
     @message ||= false
+    @games = @developer.games
   end
 
   def index
