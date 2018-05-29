@@ -16,6 +16,7 @@ class DevelopersController < ApplicationController
   end
 
   def index
+    @developers = Developer.all
   end
 
   def edit

@@ -1,2 +1,24 @@
 <h1>Developer#index</h1>
-<p>Find me in app/views/developer/index.html.erb</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Employees</strong></td>
+      <td><strong>Location</strong></td>
+    </tr>
+    <% @developers.each do |developers| %>
+      <tr>
+
+        <td><%= developers.name %></td>
+        <td><%= developers.employees %></td>
+        <td><%= developers.location %></td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
