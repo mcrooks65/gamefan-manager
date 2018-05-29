@@ -1,5 +1,6 @@
-class FanController < ApplicationController
+class GamesController < ApplicationController
   def new
+
   end
 
   def create
@@ -9,8 +10,5 @@ class FanController < ApplicationController
   end
 
   def index
-  end
-
-  def edit
   end
 end

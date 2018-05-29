@@ -1,0 +1,18 @@
+<h1>Developer#show</h1>
+<p>Find me in app/views/developer/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<% if @message %>
+  <div class="center alert">
+    <p><%= @message %></p>
+  </div>
+<% end %>
+
+<div class="center">
+
+  <div class="info">
+    <p><strong>Name:</strong> <%= @developer.name %></p>
+    <p><strong>Employees:</strong> <%= @developer.employees %></p>
+    <p><strong>Location:</strong>  <%= @developer.location %></p>
+  </div>
+</div>
