@@ -1,4 +1,4 @@
-<h1>Developer#index</h1>
+<h1>Developer Index</h1>
 <table class="table">
   <thead>
     <tr>
@@ -12,12 +12,12 @@
       <td><strong>Employees</strong></td>
       <td><strong>Location</strong></td>
     </tr>
-    <% @developers.each do |developers| %>
+    <% @developers.each do |developer| %>
       <tr>
-
-        <td><%= developers.name %></td>
-        <td><%= developers.employees %></td>
-        <td><%= developers.location %></td>
+    
+        <td><%= link_to "#{developer.name}", developer_path(developer) %></td>
+        <td><%= developer.employees %></td>
+        <td><%= developer.location %></td>
         <% end %>
       </tr>
   </tbody>
