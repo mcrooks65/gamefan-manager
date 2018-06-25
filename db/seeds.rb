@@ -7,4 +7,7 @@
 Fan.create(name:"Matt")
 Fan.create(name:"Chris")
 Game.create(title: "FreeHolder", price: 9.99, genre: "strategy", description: "Blending strategy, survival, and roguelike elements with RPG style character development, FreeHolder is the story of three escaped slaves in the time of the Roman Republic. Farm, hunt, craft, and cook your way through the years as you live on the edge of the beginning of the Empire.", developer: @dev)
-Game.create(title: "FakeGameMan", price: 9.99, genre: "action", description: "This game isn't real.", developer: @dev2)
+Game.create(title: "Cyber Dawn", price: 9.99, genre: "strategy", description: "The next big thing in cyberpunk", developer: @dev)
+Game.create(title: "FakeGame", price: 9.99, genre: "action", description: "This game isn't real.", developer: @dev2)
+Game.create(title: "FakeGame2", price: 9.99, genre: "action", description: "This game isn't real either.", developer: @dev2)
+Game.create(title: "FakeGame3",price: 9.99, genre: "action", description: "This game isn't real as well.", developer: @dev2)
