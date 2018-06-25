@@ -2,9 +2,12 @@
 
   <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %></div>
+    <%= f.text_field :name, class: "form-control" %></div
 
-    <br>
+  <div class="form-group">
+    <%= f.label "Vote for your favorite Game(s)" %>   
+    <%= f.collection_check_boxes(:game_ids, Game.all, :id, :title)%>
+   <br>
 
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
