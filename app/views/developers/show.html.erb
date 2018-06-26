@@ -1,4 +1,4 @@
-<h1>Developer#show</h1>
+<h1><%= @developer.name %></h1>
 <p id="notice"><%= notice %></p>
 <% if @message %>
   <div class="center alert">
@@ -13,9 +13,9 @@
     <% @games.each do |game| %>
       <p>
         <%= link_to "#{game.title}", developer_game_path(game) %>
-      </p>
-      <br>
+      </p> 
     <% end %>
+    <br>
     <%= link_to "Add Game", new_developer_game_path(@developer) %>
   </div>
 </div>
