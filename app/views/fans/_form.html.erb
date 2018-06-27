@@ -5,8 +5,8 @@
     <%= f.text_field :name, class: "form-control" %></div
 
   <div class="form-group">
-    <%= f.label "Vote for your favorite Game(s)" %>   
-    <%= f.collection_check_boxes(:game_ids, Game.all, :id, :title)%>
+    <%= f.label "Vote for your favorite Game" %>   
+    <%= f.collection_select(:game_id, Game.all, :id, :title)%>
    <br>
 
   <div class="actions">
