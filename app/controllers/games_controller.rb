@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   def new
     @game = Game.new
+    @dev = Developer.find(params[:developer_id])
   end
 
   def create
