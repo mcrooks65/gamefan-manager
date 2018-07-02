@@ -1,2 +1,18 @@
-<h1>Game#show</h1>
-<p>Find me in app/views/game/show.html.erb</p>
+<h1><%= @game.title %></h1>
+<p id="notice"><%= notice %></p>
+<% if @message %>
+  <div class="center alert">
+    <p><%= @message %></p>
+  </div>
+<% end %>
+<div class="center">
+  <div class="info">
+  
+    <p><strong>Title:</strong> <%= @game.title %></p>
+    <p><strong>Description:</strong> <%= @game.description %></p>
+    <p><strong>Genre:</strong>  <%= @game.genre %></p>
+    <p><strong>Price:</strong>  <%= @game.price %></p>
+    <p><strong>Developer: </string><%= link_to "#{@game.developer.name}", developer_path(@game.developer) %>
+
+  </div>
+</div>

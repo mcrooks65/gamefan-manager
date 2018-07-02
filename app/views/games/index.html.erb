@@ -13,12 +13,12 @@
       <td><strong>Price</strong></td>
       <td><strong>Developer</strong></td>
     </tr>
-    <% @games.each do |games| %>
+    <% @games.each do |game| %>
       <tr>
-        <td><%= games.title %></td>
-        <td><%= games.genre %></td>
-        <td><%= games.price %></td>
-        <td><%= games.developer.name %></td>
+        <td><%= link_to "#{game.title}", game_path(game) %></td>
+        <td><%= game.genre %></td>
+        <td><%= game.price %></td>
+        <td><%= game.developer.name %></td>
         <% end %>
       </tr>
   </tbody>

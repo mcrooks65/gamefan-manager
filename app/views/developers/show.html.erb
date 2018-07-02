@@ -12,10 +12,12 @@
     <p><strong>Location:</strong>  <%= @developer.location %></p>
     <% @games.each do |game| %>
       <p>
-        <%= link_to "#{game.title}", developer_game_path(game) %>
+        <%= link_to "#{game.title}", game_path(game) %>
       </p> 
     <% end %>
     <br>
     <%= link_to "Add Game", new_developer_game_path(@developer) %>
   </div>
+  <br>
+  <%= link_to "Return to Developer Index", developers_path %>
 </div>
