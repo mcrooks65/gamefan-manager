@@ -6,7 +6,6 @@ class FansController < ApplicationController
   def create
     @fan = Fan.new(fan_params)
     respond_to do |format|
-     
       if @fan.save
         format.html { redirect_to @fan, notice: 'Fan was successfully created.' }
       else
