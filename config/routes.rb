@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # get 'games', to: 'games#index'
   resources :fans, :games
   root 'static_pages#home'
+  get 'tally', to: 'static_pages#tally'
 end
