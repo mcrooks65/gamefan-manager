@@ -16,6 +16,8 @@
     <%= f.label :price %>
     <%= f.text_field :price, class: "form-control" %></div>
 
+    <%= f.hidden_field :developer_id, value: params[:developer_id] %>
+
   <div class="actions">
     <%= f.submit "Create Game" %>
   </div>

@@ -6,6 +6,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create(game_params)
+    binding.pry
     respond_to do |format|
       if @game.save
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
@@ -26,6 +27,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :genre, :price)
+    params.require(:game).permit(:title, :description, :genre, :price, :developer_id)
   end
 end
