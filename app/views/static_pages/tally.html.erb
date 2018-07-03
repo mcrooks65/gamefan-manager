@@ -1,3 +1,50 @@
 <h1>Fan Tally</h1>
 <h2>Games</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><strong>Title</strong></td>
+      <td><strong>Fans</strong></td>
+      <td><strong>Genre</strong></td>
+      <td><strong>Price</strong></td>
+      <td><strong>Developer</strong></td>
+    </tr>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= link_to "#{game.title}", game_path(game) %></td>
+        <td><%= game.fans.count %></td>
+        <td><%= game.genre %></td>
+        <td><%= game.price %></td>
+        <td><%= link_to "#{game.developer.name}", developer_path(game.developer) %></td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
 <h2>Developers</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Fans</strong></td>
+    </tr>
+    <% @devs.each do |dev| %>
+      <tr>
+        <td><%= link_to "#{dev.name}", developer_path(dev) %></td>
+        <td><%= dev.fans.count %></td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
+<br> <br>
+<%= link_to "Back to Home", '/' %>

@@ -7,7 +7,7 @@ class FansController < ApplicationController
     @fan = Fan.new(fan_params)
     respond_to do |format|
       if @fan.save
-        format.html { redirect_to @fan, notice: 'Fan was successfully created.' }
+        format.html { redirect_to '/tally', notice: 'Fan was successfully created.' }
       else
         format.html { render :new }
       end
