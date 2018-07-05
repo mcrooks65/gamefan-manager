@@ -1,11 +1,10 @@
 class GamesController < ApplicationController
   def new
-    @game = Game.new
-    @dev = Developer.find(params[:developer_id])
+    @game = Game.new(developer_id: params[:developer_id])
   end
 
   def create
-    @game = Game.create(game_params)
+    @game = Game.new(game_params)
     respond_to do |format|
       if @game.save
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
