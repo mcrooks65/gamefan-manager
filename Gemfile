@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'pry'
 
+gem 'bcrypt'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
