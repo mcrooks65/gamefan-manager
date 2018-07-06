@@ -1,6 +1,7 @@
 class Developer < ApplicationRecord
   has_many :games
   has_many :fans, through: :games
+  has_secure_password
 
   validates :name, presence: true, uniqueness: true
   validates :employees, presence: true,  numericality: { greater_than: 0 } 
