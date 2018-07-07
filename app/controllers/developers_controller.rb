@@ -37,7 +37,9 @@ class DevelopersController < ApplicationController
       params.require(:developer).permit(
         :name,
         :employees,
-        :location
+        :location,
+        :password,
+        :password_confirmation
       )
     end
 end
