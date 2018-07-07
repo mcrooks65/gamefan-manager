@@ -25,15 +25,17 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :location, "Location:" %>
+    <%= f.label :location, "Location" %>
     <br>
     <%= f.text_field :location, class: "form-control" %>
   </div>
 
-  <!-- <div class="form-group">
     <%= f.label :password %>
     <br>
-    <%= f.password_field :password, class: "form-control" %> -->
+    <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
 
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
