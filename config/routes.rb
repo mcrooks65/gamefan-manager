@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
   resources :developers do
     resources :games
   end
-  # get 'games', to: 'games#index'
   resources :fans, :games
   root 'static_pages#home'
   get 'tally', to: 'static_pages#tally'
