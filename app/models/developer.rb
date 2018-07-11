@@ -8,6 +8,18 @@ class Developer < ApplicationRecord
   validates :location, presence: true
   validates :password, presence: true, length: {within: 5..30}
 
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |dev|
+      dev.email = auth.info.email
+      dev.uid = auth.uid
+      dev.provider = auth.provider
+      dev.avatar_url = auth.info.image
+      dev.username = auth.info.name
+      dev.oauth_token = auth.credentials.token
+      dev.save!
+    end
+  end
+
   def self.order_by_number_of_games
     self.joins(:games).group("developers.id").order(name: :asc).size
   end
