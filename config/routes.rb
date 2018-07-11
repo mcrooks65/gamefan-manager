@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'tally', to: 'static_pages#tally'
   get 'order', to: 'static_pages#order'
+  get '/auth/github/callback' => 'sessions#create'
 end
