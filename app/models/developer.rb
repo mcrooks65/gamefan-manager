@@ -9,7 +9,9 @@ class Developer < ApplicationRecord
   validates :password, presence: true, length: {within: 5..30}
 
   def self.order_by_number_of_games
-    self.joins(:games).group("developers.id").order(name: :desc).size
-
+    self.joins(:games).group("developers.id").order(name: :asc).size.each do |dev_id, game_count|
+      puts "#{Developer.find_by(id: dev_id).name}"
+      puts "#{game_count}"
+    end
   end
 end
