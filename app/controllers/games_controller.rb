@@ -19,7 +19,12 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.all
+    if params[:developer_id]
+      @games = Developer.find(params[:developer_id]).games
+
+    else
+      @games = Game.all
+    end
   end
 
   private
