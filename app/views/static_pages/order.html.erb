@@ -10,10 +10,10 @@
       <td><strong>Name</strong></td>
       <td><strong>Game Count</strong></td>
     </tr>
-    <% Developers.order_by_number_of_games.each do |dev_id, game_count| %>
+    <% Developer.order_by_number_of_games.each do |dev_id| %>
       <tr>
         <td><%= link_to "#{Developer.find_by(id: dev_id).name}", developer_path(Developer.find_by(id: dev_id)) %></td>
-        <td><%= "#{game_count}" %></td>
+        <td><%= "#{dev_id.games.count}" %></td>
         <% end %>
       </tr>
   </tbody>

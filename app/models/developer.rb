@@ -21,11 +21,13 @@ class Developer < ApplicationRecord
   end
 
   def self.order_by_number_of_games
-    self.joins(:games).group("developers.id").order(name: :asc).size
+    self.joins(:games)
+    .group("developers.id")
+    .order('COUNT(games.id) DESC')
   end
 end
 
-# self.joins(:games).group("developers.id").order(name: :asc).size.each do |dev_id, game_count|
-# puts "#{Developer.find_by(id: dev_id).name}"
-# puts "#{game_count}"
-# end
+#  self.joins(:games).group("developers.id").order(name: :asc).size.each do |dev_id, game_count|
+#  puts "#{Developer.find_by(id: dev_id).name}"
+#  puts "#{game_count}"
+#  end
