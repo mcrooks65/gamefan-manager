@@ -8,7 +8,8 @@ class Developer < ApplicationRecord
   validates :location, presence: true
   validates :password, presence: true, length: {within: 5..30}
 
-  def self.most_fans
-    self.select { |dev| dev.fans.count }
+  def self.order_by_number_of_games
+    self.joins(:games).group("developers.id").order(name: :desc).size
+
   end
 end
