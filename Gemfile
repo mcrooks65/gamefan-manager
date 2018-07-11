@@ -31,7 +31,7 @@ gem 'pry'
 
 gem 'bcrypt'
 
-gem 'omniauth'
+gem 'omniauth-github'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
