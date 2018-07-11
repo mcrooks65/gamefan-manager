@@ -1,0 +1,22 @@
+<h1> Developers by Number of Games </h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Game Count</strong></td>
+    </tr>
+    <% Developers.order_by_number_of_games.each do |dev_id, game_count| %>
+      <tr>
+        <td><%= link_to "#{Developer.find_by(id: dev_id).name}", developer_path(Developer.find_by(id: dev_id)) %></td>
+        <td><%= "#{game_count}" %></td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
+<br> <br>
+<%= link_to "Back to Home", '/' %>
