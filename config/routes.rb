@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :fans, :games
   root 'static_pages#home'
   get 'tally', to: 'static_pages#tally'
+  get 'order', to: 'static_pages#order'
 end
