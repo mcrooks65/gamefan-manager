@@ -7,6 +7,8 @@
 <%= link_to "Game Fans Vote Here!", new_fan_path, class: "btn btn-primary" %> <br>
 <%= link_to "Current Vote Tally", 'tally'%>
 <br>
-<%= link_to "Log out Test", logout_path, method: :delete %>
-<br>
 <%= link_to "Class Method Test", 'order'%>
+<br> <br>
+<% if session[:dev_id] %>
+  <%= link_to "Log out", logout_path, method: :delete %>   
+<% end %>
