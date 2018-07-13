@@ -18,7 +18,11 @@ class DevelopersController < ApplicationController
   def show
     @message = params[:message] if params[:message]
     @message ||= false
-    @games = @developer.games
+    if session[:dev_id]
+      @games = @developer.games
+    else
+      redirect_to login_path
+    end
   end
 
   def index
