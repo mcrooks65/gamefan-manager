@@ -9,13 +9,12 @@ class Developer < ApplicationRecord
   validates :password, presence: true, length: {within: 5..30}
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |dev|
-      dev.email = auth.info.email
-      dev.uid = auth.uid
-      dev.provider = auth.provider
-      dev.avatar_url = auth.info.image
-      dev.username = auth.info.name
-      dev.oauth_token = auth.credentials.token
+    where(uid: auth.uid).first_or_initialize.tap do |dev|
+      dev.id = auth.uid 
+      dev.password = 'tester'
+      dev.name = 'GithubProfile'
+      dev.employees = 1
+      dev.location = 'GitHub'
       dev.save!
     end
   end
@@ -26,8 +25,3 @@ class Developer < ApplicationRecord
     .order('COUNT(games.id) DESC')
   end
 end
-
-#  self.joins(:games).group("developers.id").order(name: :asc).size.each do |dev_id, game_count|
-#  puts "#{Developer.find_by(id: dev_id).name}"
-#  puts "#{game_count}"
-#  end
