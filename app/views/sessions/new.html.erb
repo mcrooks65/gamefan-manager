@@ -13,7 +13,7 @@
 <% end %>
 
 <%# OAUTH %>
-<% if current_user.blank? %>
+<% if current_dev.blank? %>
   <h1>OAuth SignIn</h1>
   <%= link_to 'Sign In with Github', '/auth/github' %>
 <% else %>
