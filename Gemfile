@@ -31,7 +31,11 @@ gem 'pry'
 
 gem 'bcrypt'
 
+gem 'omniauth'
+
 gem 'omniauth-github'
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
