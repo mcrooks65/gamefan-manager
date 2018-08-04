@@ -1,5 +1,4 @@
 <h1>Developer Login</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
 <%= form_for @dev, url: login_path, method: :post do |f| %>
   <div class="field"><%= f.label :name, "Select your Developer" %><br>
     <%= f.collection_select(:id, @devs, :id, :name) %>
